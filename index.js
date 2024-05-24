@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const authRoute = require("./routes/authRoute");
-const studentRoute = require("./routes/studentRoute");
 const createStudentRoute = require("./routes/createStudentRoute");
 var cors = require("cors");
 require("dotenv").config();
@@ -10,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/auth", authRoute);
-app.use("/students", studentRoute);
 app.use("/student", createStudentRoute);
 
 app.listen(process.env.PORT, () => {
